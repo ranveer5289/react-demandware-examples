@@ -35,11 +35,11 @@ function demoReact1()
 function demoReact2()
 {
 	const Component = require( '~/cartridge/scripts/react-js-views/Avatar.js' );
-	const Avatar = React.createFactory(Component.Avatar);
+	const Avatar = React.createFactory( Component.Avatar );
 
-	const props = {pagename : "Engineering"};
-	const html = ReactServer.renderToString(Avatar(props));
+	const props = { pagename : 'Engineering' };
+	const html = ReactServer.renderToString( Avatar( props ) );
 
-	ISML.renderTemplate('/react/demo2', {markup:html});
+	ISML.renderTemplate( '/react/demo2', { markup :html } );
 
 }

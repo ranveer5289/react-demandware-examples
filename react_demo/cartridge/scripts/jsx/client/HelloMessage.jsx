@@ -13,17 +13,17 @@ else
 var HelloMessage = React.createClass( {
 
 	getInitialState : function()
- {
+	{
 		return { surname : 'raghuwanshi' };
 	},
 
 	handleClick : function()
- {
+	{
 		alert( 'You clicked!' );
 	},
 
 	render : function()
- {
+	{
 		return <div onClick={this.handleClick}>Hello {this.props.name}</div>;
 	}
 } );
