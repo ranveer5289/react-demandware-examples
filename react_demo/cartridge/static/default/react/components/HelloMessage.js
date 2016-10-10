@@ -12,7 +12,7 @@ if (isServerSide) {
 var HelloMessage = React.createClass({
 
 	getInitialState: function getInitialState() {
-		return { surname: "raghuwanshi" };
+		return { surname: 'raghuwanshi' };
 	},
 
 	handleClick: function handleClick() {
@@ -32,5 +32,5 @@ var HelloMessage = React.createClass({
 if (isServerSide) {
 	exports.HelloMessage = HelloMessage;
 } else {
-	ReactDOM.render(React.createElement(HelloMessage, { name: 'Ranveer' }), document.getElementById("container"));
+	ReactDOM.render(React.createElement(HelloMessage, { name: 'Ranveer' }), document.getElementById('container'));
 }

@@ -1,8 +1,8 @@
 const isServerSide = typeof window === 'undefined';
 
-if (isServerSide)
+if ( isServerSide )
 {
-	var React = require('~/cartridge/scripts/react/lib/React.js');
+	var React = require( '~/cartridge/scripts/react/lib/React.js' );
 }
 else
 {
@@ -10,26 +10,29 @@ else
 	var ReactDOM = window.ReactDOM;
 }
 
-var HelloMessage = React.createClass({
+var HelloMessage = React.createClass( {
 
-	getInitialState: function () {
-		return { surname : "raghuwanshi"}
+	getInitialState : function()
+ {
+		return { surname : 'raghuwanshi' };
 	},
 
-	handleClick: function () {
-		alert('You clicked!')
+	handleClick : function()
+ {
+		alert( 'You clicked!' );
 	},
 
-	render: function() {
-		return <div onClick={this.handleClick}>Hello {this.props.name}</div>
+	render : function()
+ {
+		return <div onClick={this.handleClick}>Hello {this.props.name}</div>;
 	}
-})
+} );
 
-if (isServerSide)
+if ( isServerSide )
 {
-	exports.HelloMessage = HelloMessage
+	exports.HelloMessage = HelloMessage;
 }
 else
 {
-	ReactDOM.render(<HelloMessage name="Ranveer" />, document.getElementById("container"))
+	ReactDOM.render( <HelloMessage name='Ranveer' />, document.getElementById( 'container' ) );
 }

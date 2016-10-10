@@ -32,5 +32,5 @@ var Item = React.createClass({
 if (isServerSide) {
 	exports.Item = Item;
 } else {
-	ReactDOM.render(React.createElement(Item, { initialCount: 7 }), document.getElementById("container"));
+	ReactDOM.render(React.createElement(Item, { initialCount: 7 }), document.getElementById('container'));
 }

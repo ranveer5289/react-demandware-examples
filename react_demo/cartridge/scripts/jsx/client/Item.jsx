@@ -1,8 +1,8 @@
 const isServerSide = typeof window === 'undefined';
 
-if (isServerSide)
+if ( isServerSide )
 {
-	var React = require('app_storefront_core/cartridge/scripts/react/lib/React.js');
+	var React = require( '~/cartridge/scripts/react/lib/React.js' );
 }
 else
 {
@@ -10,30 +10,32 @@ else
 	var ReactDOM = window.ReactDOM;
 }
 
-
-var Item = React.createClass({
-	getInitialState: function() {
+var Item = React.createClass( {
+	getInitialState : function()
+ {
 		return {
-			count: this.props.initialCount
+			count : this.props.initialCount
 		};
 	},
 
-	_increment: function() {
-		this.setState({ count: this.state.count + 1 });
+	_increment : function()
+ {
+		this.setState( { count : this.state.count + 1 } );
 	},
 
-	render: function() {
+	render : function()
+ {
 		return <div onClick={this._increment}>
 			{this.state.count}
 		</div>;
 	}
-});
+} );
 
-if (isServerSide)
+if ( isServerSide )
 {
-	exports.Item = Item
+	exports.Item = Item;
 }
 else
 {
-	ReactDOM.render(<Item initialCount={7} />, document.getElementById("container"))
+	ReactDOM.render( <Item initialCount={7} />, document.getElementById( 'container' ) );
 }
