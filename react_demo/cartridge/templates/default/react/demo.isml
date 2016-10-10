@@ -1,0 +1,7 @@
+<div id="container"><isprint value="${pdict.markup}" encoding="off"></div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom-server.js"></script>
+
+<script src="${URLUtils.staticURL('/react/components/Item.js')}" type="text/javascript"></script>
