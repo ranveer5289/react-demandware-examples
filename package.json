@@ -1,0 +1,25 @@
+{
+  "name": "react-demandware-examples",
+  "version": "1.0.0",
+  "description": "Using React framework on server-side with Demandware",
+  "main": "index.js",
+  "scripts": {
+    "common": "./node_modules/babel-cli/bin/babel.js --plugins transform-react-jsx --watch '/Users/rranghuwanshi/clone/react-demandware-examples/react_demo/cartridge/scripts/jsx/common' --out-dir '/Users/rranghuwanshi/clone/react-demandware-examples/react_demo/cartridge/static/default/react/components'",
+
+	"server" : "./node_modules/babel-cli/bin/babel.js --plugins transform-react-jsx --watch '/Users/rranghuwanshi/clone/react-demandware-examples/react_demo/cartridge/scripts/jsx/server' --out-dir '/Users/rranghuwanshi/clone/react-demandware-examples/react_demo/cartridge/scripts/react-js-views'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranveer5289/react-demandware-examples.git"
+  },
+  "author": "Ranveer Raghuwanshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ranveer5289/react-demandware-examples/issues"
+  },
+  "homepage": "https://github.com/ranveer5289/react-demandware-examples#readme",
+  "dependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0"
+  }
+}

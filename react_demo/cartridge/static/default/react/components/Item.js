@@ -1,6 +1,4 @@
-'use strict';
-
-var isServerSide = typeof window === 'undefined';
+const isServerSide = typeof window === 'undefined';
 
 if (isServerSide) {
 	var React = require('~/cartridge/scripts/react/lib/React.js');
@@ -10,17 +8,17 @@ if (isServerSide) {
 }
 
 var Item = React.createClass({
-	getInitialState: function getInitialState() {
+	getInitialState: function () {
 		return {
 			count: this.props.initialCount
 		};
 	},
 
-	_increment: function _increment() {
+	_increment: function () {
 		this.setState({ count: this.state.count + 1 });
 	},
 
-	render: function render() {
+	render: function () {
 		return React.createElement(
 			'div',
 			{ onClick: this._increment },

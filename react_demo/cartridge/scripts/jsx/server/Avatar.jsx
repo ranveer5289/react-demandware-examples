@@ -1,6 +1,6 @@
 const React = require('~/cartridge/scripts/react/lib/React.js');
 var Avatar = React.createClass({
-	render() {
+	render : function() {
 		return (
 			<div>
 				<PagePic pagename={this.props.pagename} />
@@ -11,7 +11,7 @@ var Avatar = React.createClass({
 })
 
 var PagePic = React.createClass({
-	render() {
+	render : function() {
 		return (
 			<img src={'https://graph.facebook.com/' + this.props.pagename + '/picture'} />
 		);
@@ -19,7 +19,7 @@ var PagePic = React.createClass({
 })
 
 var PageLink = React.createClass({
-	render() {
+	render : function() {
 		return (
 			<a href={'https://www.facebook.com/' + this.props.pagename}>
 				{this.props.pagename}

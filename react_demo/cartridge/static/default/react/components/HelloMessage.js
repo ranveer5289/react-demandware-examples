@@ -1,6 +1,4 @@
-'use strict';
-
-var isServerSide = typeof window === 'undefined';
+const isServerSide = typeof window === 'undefined';
 
 if (isServerSide) {
 	var React = require('~/cartridge/scripts/react/lib/React.js');
@@ -11,15 +9,15 @@ if (isServerSide) {
 
 var HelloMessage = React.createClass({
 
-	getInitialState: function getInitialState() {
+	getInitialState: function () {
 		return { surname: 'raghuwanshi' };
 	},
 
-	handleClick: function handleClick() {
+	handleClick: function () {
 		alert('You clicked!');
 	},
 
-	render: function render() {
+	render: function () {
 		return React.createElement(
 			'div',
 			{ onClick: this.handleClick },

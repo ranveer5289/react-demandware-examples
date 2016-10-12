@@ -1,6 +1,0 @@
-./node_modules/babel-cli/bin/babel.js --plugins transform-react-jsx --watch "/Users/rranghuwanshi/clone/sitegenesis/react_demo/cartridge/scripts/jsx/client" --out-dir "/Users/rranghuwanshi/clone/sitegenesis/react_demo/cartridge/static/default/react/components"
-
-./node_modules/babel-cli/bin/babel.js --plugins transform-react-jsx --watch "/Users/rranghuwanshi/clone/sitegenesis/react_demo/cartridge/scripts/jsx/" --out-dir "/Users/rranghuwanshi/clone/sitegenesis/react_demo/cartridge/scripts/react-js-views"
-
-
-
