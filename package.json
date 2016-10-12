@@ -4,9 +4,9 @@
   "description": "Using React framework on server-side with Demandware",
   "main": "index.js",
   "scripts": {
-    "common": "./node_modules/babel-cli/bin/babel.js --plugins transform-react-jsx --watch '/Users/rranghuwanshi/clone/react-demandware-examples/react_demo/cartridge/scripts/jsx/common' --out-dir '/Users/rranghuwanshi/clone/react-demandware-examples/react_demo/cartridge/static/default/react/components'",
-
-	"server" : "./node_modules/babel-cli/bin/babel.js --plugins transform-react-jsx --watch '/Users/rranghuwanshi/clone/react-demandware-examples/react_demo/cartridge/scripts/jsx/server' --out-dir '/Users/rranghuwanshi/clone/react-demandware-examples/react_demo/cartridge/scripts/react-js-views'"
+    "common": "./node_modules/.bin/babel --plugins transform-react-jsx --watch './react_demo/cartridge/scripts/jsx/common' --out-dir './react_demo/cartridge/static/default/react/components'",
+    "server": "./node_modules/.bin/babel --plugins transform-react-jsx --watch './react_demo/cartridge/scripts/jsx/server' --out-dir './react_demo/cartridge/scripts/react-js-views'",
+    "build" : "./node_modules/.bin/concurrently --kill-others 'npm run common' 'npm run server'" 
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ranveer5289/react-demandware-examples#readme",
   "dependencies": {
     "babel-cli": "^6.16.0",
-    "babel-plugin-transform-react-jsx": "^6.8.0"
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "concurrently": "^3.1.0"
   }
 }
