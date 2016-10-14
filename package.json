@@ -6,7 +6,7 @@
   "scripts": {
     "common": "./node_modules/.bin/babel --plugins transform-react-jsx --watch './react_demo/cartridge/scripts/jsx/common' --out-dir './react_demo/cartridge/static/default/react/components'",
     "server": "./node_modules/.bin/babel --plugins transform-react-jsx --watch './react_demo/cartridge/scripts/jsx/server' --out-dir './react_demo/cartridge/scripts/react-js-views'",
-    "build" : "./node_modules/.bin/concurrently --kill-others 'npm run common' 'npm run server'" 
+    "transform": "./node_modules/.bin/concurrently --kill-others 'npm run common' 'npm run server'"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,16 @@
     "url": "https://github.com/ranveer5289/react-demandware-examples/issues"
   },
   "homepage": "https://github.com/ranveer5289/react-demandware-examples#readme",
-  "dependencies": {
+  "devDependencies": {
+    "grunt-babel": "^6.0.0",
+    "grunt-concurrent": "^2.3.1",
+    "load-grunt-tasks": "^3.5.2",
     "babel-cli": "^6.16.0",
     "babel-plugin-transform-react-jsx": "^6.8.0",
-    "concurrently": "^3.1.0"
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "concurrently": "^3.1.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }
