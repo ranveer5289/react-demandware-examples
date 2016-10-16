@@ -8,8 +8,9 @@ exports.Demo3 = guard.ensure( ['get'], demoReact3 );
 exports.FetchComments = guard.ensure( ['get'], fetchComments );
 exports.SaveComment = guard.ensure( ['post'], saveComment );
 
-const React = require( '~/cartridge/scripts/react/lib/React.js' );
-const ReactServer = require( '~/cartridge/scripts/react/lib/ReactDOMServer.js' );
+const React = require( 'react.js' );
+const ReactServer = require( 'react-dom-server.js' );
+
 const ISML = require( 'dw/template/ISML' );
 const URLUtils = require( 'dw/web/URLUtils' );
 const CustomObjectMgr = require( 'dw/object/CustomObjectMgr' );

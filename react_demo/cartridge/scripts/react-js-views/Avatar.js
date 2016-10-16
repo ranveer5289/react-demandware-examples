@@ -1,4 +1,4 @@
-const React = require('~/cartridge/scripts/react/lib/React.js');
+const React = require('react');
 var Avatar = React.createClass({
 	render: function () {
 		return React.createElement(

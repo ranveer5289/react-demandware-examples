@@ -2,7 +2,7 @@ const isServerSide = typeof window === 'undefined';
 
 if ( isServerSide )
 {
-	var React = require( '~/cartridge/scripts/react/lib/React.js' );
+	var React = require( 'react' );
 }
 else
 {
