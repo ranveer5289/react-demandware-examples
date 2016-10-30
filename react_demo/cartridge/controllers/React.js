@@ -5,14 +5,13 @@ exports.Demo = guard.ensure( ['get'], demoReact );
 exports.Demo1 = guard.ensure( ['get'], demoReact1 );
 exports.Demo2 = guard.ensure( ['get'], demoReact2 );
 exports.Demo3 = guard.ensure( ['get'], demoReact3 );
+exports.Demo4 = guard.ensure( ['get'], demoReact4 );
 exports.FetchComments = guard.ensure( ['get'], fetchComments );
 exports.SaveComment = guard.ensure( ['post'], saveComment );
 
 const React = require( 'react' );
 const ReactServer = require( 'react-dom-server' );
-const Redux = require( 'redux' );
-const ReactRedux = require( '~/cartridge/scripts/react-redux/lib/ReactRedux.js' );
-
+const ReactRouter = require( 'react-router' );
 const ISML = require( 'dw/template/ISML' );
 const URLUtils = require( 'dw/web/URLUtils' );
 const CustomObjectMgr = require( 'dw/object/CustomObjectMgr' );
@@ -21,18 +20,6 @@ function demoReact()
 {
 	const Component = require( '~/cartridge/static/default/react/components/HelloMessage.js' );
 	const Hello = React.createFactory( Component.HelloMessage );
-	var defaultState = {
-			  todo: {
-				    items: ["1"]
-				  }
-				};
-
-	function todoApp(state, action) {
-	}
-	const store = Redux.createStore(todoApp, defaultState);
-	const preloadedState = store.getState()
-
-
 
 	const props = { name : 'Ranveer' };
 	const html = ReactServer.renderToString( Hello( props ) );
@@ -81,6 +68,28 @@ function demoReact3()
 	}
 
 	ISML.renderTemplate( '/react/index', viewInput );
+}
+
+function demoReact4()
+{
+
+	const match = ReactRouter.match;
+	const RouterContext = ReactRouter.RouterContext;
+	const location = request.httpHeaders['x-is-path_info'];
+	const routes = require( '~/cartridge/static/default/react/components/Route.js' ).MyRoutes;
+	
+	match({routes:routes, location:location}, function( error, redirectLocation, renderProps ) {
+
+		const Routes = React.createElement( RouterContext,  renderProps);
+		const html = ReactServer.renderToString(Routes);
+
+		const viewInput = {
+			markup : html
+		}
+
+		ISML.renderTemplate( '/react/demo4', viewInput );
+
+	})
 }
 
 function fetchComments()
