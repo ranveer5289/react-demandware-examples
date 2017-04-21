@@ -1,11 +1,15 @@
-var guard = require( 'app_storefront_controllers/cartridge/scripts/guard.js' );
-var response = require('app_storefront_controllers/cartridge/scripts/util/Response');
+var guard = require( 'new_sg_controllers/cartridge/scripts/guard.js' );
+var response = require('new_sg_controllers/cartridge/scripts/util/Response');
 
 exports.Demo = guard.ensure( ['get'], demoReact );
 exports.Demo1 = guard.ensure( ['get'], demoReact1 );
 exports.Demo2 = guard.ensure( ['get'], demoReact2 );
 exports.Demo3 = guard.ensure( ['get'], demoReact3 );
 exports.Demo4 = guard.ensure( ['get'], demoReact4 );
+exports.Demo5 = guard.ensure( ['get'], demoReact5 );
+exports.Login = guard.ensure( ['get'], demoReact5 );
+exports.SignUp = guard.ensure( ['get'], demoReact5 );
+exports.Demo5 = guard.ensure( ['get'], demoReact5 );
 exports.FetchComments = guard.ensure( ['get'], fetchComments );
 exports.SaveComment = guard.ensure( ['post'], saveComment );
 
@@ -77,7 +81,7 @@ function demoReact4()
 	const RouterContext = ReactRouter.RouterContext;
 	const location = request.httpHeaders['x-is-path_info'];
 	const routes = require( '~/cartridge/static/default/react/components/Route.js' ).MyRoutes;
-	
+
 	match({routes:routes, location:location}, function( error, redirectLocation, renderProps ) {
 
 		const Routes = React.createElement( RouterContext,  renderProps);
@@ -88,6 +92,27 @@ function demoReact4()
 		}
 
 		ISML.renderTemplate( '/react/demo4', viewInput );
+
+	})
+}
+
+function demoReact5()
+{
+	const match = ReactRouter.match;
+	const RouterContext = ReactRouter.RouterContext;
+	const location = request.httpHeaders['x-is-path_info'];
+	const routes = require( '~/cartridge/static/default/react/components/Master.js' ).MyRoutes;
+
+	match({routes:routes, location:location}, function( error, redirectLocation, renderProps ) {
+
+		const Routes = React.createElement( RouterContext,  renderProps);
+		const html = ReactServer.renderToString(Routes);
+
+		const viewInput = {
+			markup : html
+		}
+
+		ISML.renderTemplate( '/react/demo5', viewInput );
 
 	})
 }
